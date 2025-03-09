@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html lang="sv">
+	<head>
+		<title>Vegabaren Övrigt</title>
+		<meta charset="UTF-8">
+		<meta name="description" content="Information om Vegabaren med bland annat historia">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" type="image/x-icon" href="lib/logo.ico">
+		<link rel="stylesheet" href="style.css">
+		<script src="scripts/other_script.js"></script>
+		<script src="scripts/main_script.js"></script>
+	</head>
+
+	<body>
+		<header>
+			<a href="index.html" tabindex="1"><img src="/lib/logo_pink.png" alt="Vegabarens logotyp" id="main_logo"></a>
+
+			<div id="navigation_desktop">
+				<a href="menu.html" tabindex="2" class="nav_button">Meny</a>
+				<a href="events.html" tabindex="3" class="nav_button">Evenegang</a>
+				<a href="about.html" tabindex="4" class="nav_button">Om oss</a>
+				<a href="contact.html" tabindex="5" class="nav_button">Kontakt</a>
+			</div>
+
+			
+			<button tabindex="2" class="hamburger_button" id="open_hamburger" onclick="hamburgerOn()">
+				<hr class="ham_line">
+				<hr class="ham_line">
+				<hr class="ham_line">
+			</button>
+		</header>
+		
+		
+		<div id="nav_mobile">
+			<button tabindex="2" class="hamburger_button" id="close_hamburger" onclick="hamburgerOff()">
+				<hr class="ham_line" style="rotate: 45deg;">
+				<hr class="ham_line" style="rotate: -45deg; margin-top: -10px;">
+			</button>
+			
+			<ul>
+				<li><a href="menu.html" tabindex="3" class="nav_mobile_button">Meny</a></li>
+				<li><a href="events.html" tabindex="4" class="nav_mobile_button">Evenegang</a></li>
+				<li><a href="about.html" tabindex="5" class="nav_mobile_button">Om oss</a></li>
+				<li><a href="contact.html" tabindex="6" class="nav_mobile_button">Kontakt</a></li>
+			</ul>
+		</div>
+
+
+
+		<main id="other_main">
+			<h1>Övrigt</h1>
+			<p>
+				Denna sida är för de delar som huvudsakligen är för de uppgifter som utförs inom kursen hemsidan görs inom. Innehållet
+				har ingen större koppling till resten av den här webbplatsen.
+			</p>
+
+			<div class="other_section">
+				<h2>Video</h2>
+				<figure>
+					<figcaption>En video som visar en clownfisk som simmar runt vid en havsanemon.</figcaption>
+					<video controls muted width="500" aria-label="en video på en clownfisk">
+						<source src="lib/clownfish.mp4" type="video/mp4">
+					</video>
+				</figure>
+			</div>
+
+			<div class="other_section">
+				<h2>Audio / Ljud</h2>
+				<figure>
+					<figcaption>Kort låt gjord med piano, gitarr och bas inom GarageBand</figcaption>
+					<audio controls src="lib/short_audio.mp3" aria-label="en kort låt"></audio>
+				</figure>
+			</div>
+
+			<div class="other_section">
+				<h2>Listor</h2>
+				<p>Nedan finns två listor (ej numrerad och numrerad). Listor används på andra delar av hemsidan, men görs extra tydlig här.</p>
+				
+				<div class="other_list">
+					<p>Lista över svenska städer:</p>
+					<ul>
+						<li>Stockholm</li>
+						<li>Umeå</li>
+						<li>Göteborg</li>
+						<li>Falköping</li>
+						<li>Malmö</li>
+					</ul>
+				</div>
+
+				<div class="other_list">
+					<p>Länder med flest invånare:</p>
+					<ol>
+						<li>Indien</li>
+						<li>Kina</li>
+						<li>Förenta Staterna (USA)</li>
+						<li>Indonesien</li>
+						<li>Pakistan</li>
+					</ol>
+				</div>
+			</div>
+
+			<div class="other_section">
+				<h2>Tabell</h2>
+				<p>Tabeller har använts på andra delar av sidan, som exempelvis för öppetiderna. Däremot görs det tydligare här.</p>
+
+				<table id="other_table">
+					<thead>
+						<tr>
+							<th colspan="4" id="other_table_title">Information för vissa ämnen inom det periodiska systemet</th>
+						</tr>
+						<tr>
+							<th scope="col">Ämne</th>
+							<th scope="col">Kemiskt tecken</th>
+							<th scope="col">Atomnummer</th>
+							<th scope="col">Atomvikt</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">Väte</th>
+							<td>H</td>						
+							<td>1</td>						
+							<td>1,008</td>						
+						</tr>
+						<tr>
+							<th scope="row">Kol</th>
+							<td>C</td>						
+							<td>6</td>						
+							<td>12,011</td>						
+						</tr>
+						<tr>
+							<th scope="row">Kväve</th>
+							<td>N</td>						
+							<td>7</td>						
+							<td>14,007</td>						
+						</tr>
+						<tr>
+							<th scope="row">Syre</th>
+							<td>O</td>						
+							<td>8</td>						
+							<td>15,999</td>						
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+
+			<div class="other_section">
+				<h2>Hello, JavaScript!</h2>
+				<button class="js_button" onclick="showHello()">Visa meddelande</button>
+			</div>
+
+			<div class="other_section">
+				<h2>Mörkt läge</h2>
+				<button class="js_button" onclick="darkModeToggle()">Byt mellan ljust och mörkt läge</button>
+			</div>
+		</main>
+
+
+		<footer>
+			<div class="footer_element">
+				<h4>Öppetider</h4>
+				<table id="footer_open">
+					<tbody>
+						<tr>
+							<th class="table_date" scope="row">Mån-Tors:</th>
+							<td>09:00 - 03:00</td>
+						  </tr>
+						  <tr>
+							<th class="table_date" scope="row">Fre-Lör:</th>
+							<td>09:00 - 05:00</td>
+						  </tr>
+						  <tr>
+							<th class="table_date" scope="row">Sön:</th>
+							<td>09:00 - 03:00</td>
+						  </tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="footer_element">
+				<h4>Adress</h4>
+				<p>Nynäsvägen 8</p>
+				<p>136 47 Haninge</p>
+			</div>
+
+			<div class="footer_element">
+				<h4>Beställning</h4>
+				<p>Ring: 08-777 20 58</p>
+				<a tabindex="7" href="https://www.foodora.se/restaurant/e2be/vegabaren">Foodora</a>
+				<a tabindex="8" href="https://wolt.com/sv/swe/stockholm/restaurant/vegabaren-haninge">Wolt</a>
+			</div>
+
+			<div class="footer_element">
+				<h4>Övrigt</h4>
+				<a tabindex="5" href="https://www.vegastadshotell.se">Vega Stadshotell</a>
+				<a tabindex="6" href="other.html">Uppgifts-sida</a>
+			</div>
+		</footer>
+	</body>
+</html>

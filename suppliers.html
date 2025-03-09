@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html lang="sv">
+	<head>
+		<title>Vegabaren</title>
+		<meta charset="UTF-8">
+		<meta name="description" content="Vegabarens startsida">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" type="image/x-icon" href="lib/logo.ico">
+		<link rel="stylesheet" href="style.css">
+		<script src="scripts/main_script.js"></script>
+	</head>
+
+
+	<body>
+		<header>
+			<a href="index.html" tabindex="1"><img src="/lib/logo_pink.png" alt="Vegabarens logotyp" id="main_logo"></a>
+
+			<div id="navigation_desktop">
+				<a href="menu.html" tabindex="2" class="nav_button">Meny</a>
+				<a href="events.html" tabindex="3" class="nav_button">Evenegang</a>
+				<a href="about.html" tabindex="4" class="nav_button">Om oss</a>
+				<a href="contact.html" tabindex="5" class="nav_button">Kontakt</a>
+			</div>
+
+			
+			<button tabindex="2" class="hamburger_button" id="open_hamburger" onclick="hamburgerOn()">
+				<hr class="ham_line">
+				<hr class="ham_line">
+				<hr class="ham_line">
+			</button>
+		</header>
+		
+		
+		<div id="nav_mobile">
+			<button tabindex="2" class="hamburger_button" id="close_hamburger" onclick="hamburgerOff()">
+				<hr class="ham_line" style="rotate: 45deg;">
+				<hr class="ham_line" style="rotate: -45deg; margin-top: -10px;">
+			</button>
+			
+			<ul>
+				<li><a href="menu.html" tabindex="3" class="nav_mobile_button">Meny</a></li>
+				<li><a href="events.html" tabindex="4" class="nav_mobile_button">Evenegang</a></li>
+				<li><a href="about.html" tabindex="5" class="nav_mobile_button">Om oss</a></li>
+				<li><a href="contact.html" tabindex="6" class="nav_mobile_button">Kontakt</a></li>
+			</ul>
+		</div>
+
+		<main>
+			<h1>Våra Leverantörer</h1>
+			<p>Kommer snart...</p>
+		</main>
+
+
+
+		<footer>
+			<div class="footer_element">
+				<h4>Öppetider</h4>
+				<table id="footer_open">
+					<tbody>
+						<tr>
+							<th class="table_date" scope="row">Mån-Tors:</th>
+							<td>09:00 - 03:00</td>
+						  </tr>
+						  <tr>
+							<th class="table_date" scope="row">Fre-Lör:</th>
+							<td>09:00 - 05:00</td>
+						  </tr>
+						  <tr>
+							<th class="table_date" scope="row">Sön:</th>
+							<td>09:00 - 03:00</td>
+						  </tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="footer_element">
+				<h4>Adress</h4>
+				<p>Nynäsvägen 8</p>
+				<p>136 47 Haninge</p>
+			</div>
+
+			<div class="footer_element">
+				<h4>Beställning</h4>
+				<p>Ring: 08-777 20 58</p>
+				<a tabindex="8" href="https://www.foodora.se/restaurant/e2be/vegabaren">Foodora</a>
+				<a tabindex="9" href="https://wolt.com/sv/swe/stockholm/restaurant/vegabaren-haninge">Wolt</a>
+			</div>
+
+			<div class="footer_element">
+				<h4>Övrigt</h4>
+				<a tabindex="6" href="https://www.vegastadshotell.se">Vega Stadshotell</a>
+				<a tabindex="7" href="other.html">Uppgifts-sida</a>
+			</div>
+		</footer>
+	</body>
+</html>
