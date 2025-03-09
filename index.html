@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html lang="sv">
+	<head>
+		<title>Vegabaren</title>
+		<meta charset="UTF-8">
+		<meta name="description" content="Vegabarens startsida">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" type="image/x-icon" href="lib/logo.ico">
+		<link rel="stylesheet" href="style.css">
+		<script src="scripts/main_script.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	</head>
+
+
+	<body>
+		<header>
+			<a href="index.html" tabindex="1"><img src="/lib/logo_pink.png" alt="Vegabarens logotyp" id="main_logo"></a>
+
+			<div id="navigation_desktop">
+				<a href="menu.html" tabindex="2" class="nav_button">Meny</a>
+				<a href="events.html" tabindex="3" class="nav_button">Evenegang</a>
+				<a href="about.html" tabindex="4" class="nav_button">Om oss</a>
+				<a href="contact.html" tabindex="5" class="nav_button">Kontakt</a>
+			</div>			
+		</header>
+
+		<div id="ham_buttons">
+			<button tabindex="2" class="hamburger_button" id="open_hamburger" onclick="hamburgerOn()">
+				<hr class="ham_line">
+				<hr class="ham_line">
+				<hr class="ham_line">
+			</button>
+
+			<button tabindex="2" class="hamburger_button" id="close_hamburger" onclick="hamburgerOff()">
+				<hr class="ham_line" style="rotate: 45deg;">
+				<hr class="ham_line" style="rotate: -45deg; margin-top: -10px;">
+			</button>
+		</div>
+
+		<div id="nav_mobile">
+			<ul>
+				<li><a href="menu.html" tabindex="3" class="nav_mobile_button">Meny</a></li>
+				<li><a href="events.html" tabindex="4" class="nav_mobile_button">Evenegang</a></li>
+				<li><a href="about.html" tabindex="5" class="nav_mobile_button">Om oss</a></li>
+				<li><a href="contact.html" tabindex="6" class="nav_mobile_button">Kontakt</a></li>
+			</ul>
+		</div>
+
+		<main id="index_main">
+			<div class="text_box" id="welcome">
+				<h2 class="text_box_text">Välkommen!</h2>
+				<h3 class="text_box_text">
+					Hos oss finns god mat med en känsla av nostalgi!
+				</h3>
+				<p class="text_box_text">
+					Vi har tillagat hamburgare sedan 1957, genom vad som då kallades "platta köttbullar". Är du intresserad 
+					av mer av vår historia? Klicka in till <a tabindex="6" href="/about.html">Om oss</a>
+				</p>
+				<p class="text_box_text">
+					Vill du beställa mat från oss? Ring oss på 08-777 20 58. Vi finns även på 
+					<a tabindex="7" href="https://www.foodora.se/restaurant/e2be/vegabaren">Foodora</a> och 
+					<a tabindex="8" href="https://wolt.com/sv/swe/stockholm/restaurant/vegabaren-haninge">Wolt</a>.
+				</p>
+			</div>
+
+			<div class="image_box" id="welcome_photo">
+				<img src="/lib/Vegabar_idag_0.png" id="photo_1" alt="Bild på utsidan Vegabaren">
+			</div>
+			
+			<div class="text_box" id="opening_hours">
+				<h2 class="text_box_text">Öppetider!</h2>
+				<table class="text_box_text">
+					<tbody>
+						<tr>
+							<th class="table_date" scope="row">Mån-Tors:</th>
+							<td>09:00 - 03:00</td>
+						</tr>
+						<tr>
+							<th class="table_date" scope="row">Fre-Lör:</th>
+							<td>09:00 - 05:00</td>
+						</tr>
+						<tr>
+							<th class="table_date" scope="row">Sön:</th>
+							<td>09:00 - 03:00</td>
+						</tr>
+						
+					</tbody>
+				</table>
+			</div>
+
+			<div class="image_box" id="bread">
+				<img src="/lib/Tunnbrod.jpg" id="photo_2" alt="Bild på en tunnbrödsrulle">
+			</div>
+			
+			<div class="text_box" id="find_us">
+				<h2 class="text_box_text">Hitta till oss!</h2>
+				<p class="text_box_text">
+					Vi finns på Nynäsvägen 8 i Haninge, Stockholm.
+				</p>
+				<p class="text_box_text">
+					Det gör att vi är nära Handens handelsområde och ligger intill väg 73 som leder mot bland annat Haninges skärgård, Gotland och Polen.
+				</p>
+				<p class="text_box_text">
+					Använd den interaktiva kartan för mer information!
+				</p>
+			</div>
+			
+			<div class="image_box" id="map">
+				<iframe id="photo_4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2043.9389015785434!2d18.144071977096598!3d59.18359947454408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f7b860f8e9c89%3A0x3705a340decd11ad!2sVegabaren!5e0!3m2!1ssv!2sse!4v1739015237837!5m2!1ssv!2sse" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+			</div>
+
+			<div class="image_box" id="hamburger">
+				<img src="/lib/Hamburgare_Kebab.jpg" id="photo_3" alt="Bild på en hamburgare">
+			</div>
+		</main>
+
+		<footer>
+			<div class="footer_element">
+				<h4>Öppetider</h4>
+				<table id="footer_open">
+					<tbody>
+						<tr>
+							<th class="table_date" scope="row">Mån-Tors:</th>
+							<td>09:00 - 03:00</td>
+						  </tr>
+						  <tr>
+							<th class="table_date" scope="row">Fre-Lör:</th>
+							<td>09:00 - 05:00</td>
+						  </tr>
+						  <tr>
+							<th class="table_date" scope="row">Sön:</th>
+							<td>09:00 - 03:00</td>
+						  </tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="footer_element">
+				<h4>Adress</h4>
+				<p>Nynäsvägen 8</p>
+				<p>136 47 Haninge</p>
+			</div>
+
+			<div class="footer_element">
+				<h4>Beställning</h4>
+				<p>Ring: 08-777 20 58</p>
+				<a tabindex="11" href="https://www.foodora.se/restaurant/e2be/vegabaren">Foodora</a>
+				<a tabindex="12" href="https://wolt.com/sv/swe/stockholm/restaurant/vegabaren-haninge">Wolt</a>
+			</div>
+
+			<div class="footer_element">
+				<h4>Övrigt</h4>
+				<a tabindex="9" href="https://www.vegastadshotell.se">Vega Stadshotell</a>
+				<a tabindex="10" href="other.html">Uppgifts-sida</a>
+			</div>
+		</footer>
+	</body>
+</html>
