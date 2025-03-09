@@ -14,23 +14,16 @@ function hamburgerOn () {
 	document.body.style.position = "fixed";
 	document.body.style.top = "0px";	
 
-	
-	// (Try to) get the main tag of index
-	let main = document.getElementById("index_main");
+	// Get the buttons
+	let ham_buttons = document.getElementsByClassName("hamburger_button");
 
-	// Only do this if the current website is "index"
-	if (main !== null) {
-		// Get the buttons
-		let ham_buttons = document.getElementsByClassName("hamburger_button");
-	
-		// Correct the unwanted offset for the buttons
-		for (let index = 0; index < ham_buttons.length; index++) {
-			const button = ham_buttons[index];
-	
-			button.style.marginTop = "-8px";
-			button.style.marginRight = "-8px";
-		}
-	}	
+	// Correct the unwanted offset for the buttons
+	for (let index = 0; index < ham_buttons.length; index++) {
+		const button = ham_buttons[index];
+
+		button.style.marginTop = "-8px";
+		button.style.marginRight = "-8px";
+	}
 }
 
 /**
@@ -46,21 +39,15 @@ function hamburgerOff () {
 	document.body.style.position = "";
 	document.body.style.top = "";
 
-	// (Try to) get the main tag of index
-	let main = document.getElementById("index_main");
+	// Get the buttons
+	let ham_buttons = document.getElementsByClassName("hamburger_button");
 
-	// Only do this if the current website is "index"
-	if (main !== null) {
-		// Get the buttons
-		let ham_buttons = document.getElementsByClassName("hamburger_button");
-	
-		// Correct the unwanted offset for the buttons
-		for (let index = 0; index < ham_buttons.length; index++) {
-			const button = ham_buttons[index];
-	
-			button.style.marginTop = "0px";
-			button.style.marginRight = "0px";
-		}
+	// Correct the unwanted offset for the buttons
+	for (let index = 0; index < ham_buttons.length; index++) {
+		const button = ham_buttons[index];
+
+		button.style.marginTop = "0px";
+		button.style.marginRight = "0px";
 	}
 }
 
