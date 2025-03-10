@@ -101,7 +101,7 @@ header {
 
 .ham_line {
 	border: none;
-	background-color: blanchedalmond;
+	background-color: rgb(255, 247, 236);
 	height: 4px;
 	border-radius: 10px;
 }
@@ -114,7 +114,8 @@ header {
 	left: 0px;
 	height: 100%;
 	width: 100%;
-	background-color: #c8986d;;
+	background-color: #d59761;
+	
 	z-index: 15;
 	
 	justify-content: center;
@@ -145,14 +146,18 @@ header {
 						linear-gradient(90deg, #6d4b2742 3%, #00000000 10%, #00000000 90%, #6d4b2742 97%);
 
 	border: solid 2px hsl(35, 28%, 52%);
+	filter: drop-shadow(0px 0px 2px #573c23);
 	color: rgb(42, 32, 17);
 	border-radius: 15px;
+	
+	transition: all ease-out 0.2s;
 }
 .nav_mobile_button:visited {
 	color: rgb(42, 32, 17);
 }
 .nav_mobile_button:hover {
-	scale: 0.9;
+	scale: 0.95;
+	background-color: rgb(239, 221, 190);
 }
 
 /* ====== Footer ====== */
