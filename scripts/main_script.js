@@ -7,12 +7,12 @@ function hamburgerOn () {
 	$("#open_hamburger").fadeOut(600);
 	$("#nav_mobile").slideDown(400);
 
-	// Show meny (later handled by jQuery)
+	// Show menu (later handled by jQuery)
 	document.getElementById("nav_mobile").style.display = "flex";
 	
 	// Prevent scrolling
 	document.body.style.position = "fixed";
-	document.body.style.top = "0px";	
+	document.body.style.top = "0px";
 
 	// Get the buttons
 	let ham_buttons = document.getElementsByClassName("hamburger_button");
@@ -55,14 +55,8 @@ function hamburgerOff () {
  * Plays a click sound (taken from https://freesound.org/people/eneibol/sounds/369964/)
  */
 function playClick () {
-	
-	console.log("*click*");
-
-	
-	// REMEMBER TO UN-COMMENT THIS!!!!
-
-	// let click = new Audio("lib/click.mp3");
-	// click.play();
+	let click = new Audio("lib/click.mp3");
+	click.play();
 }
 
 /**
@@ -70,41 +64,16 @@ function playClick () {
  * back up
  */
 function animateButton () {
-	let id = null;
-	const button = document.getElementById("current_page_button");
-
-	let height = 30;
-	let offset = 15;
-
-	let goingDown = true;
-	let nrOfFrames = 6;
-
-	clearInterval(id);
-	id = setInterval(frame, 30);
-
-	function frame() {
-		// Check if it has been pushed down far enough
-		if (height == 27) {
-			goingDown = false;
-		}
-
-		if (goingDown) {
-			height--;
-			offset++;
-		} else {
-			height++;
-			offset--;
-		}
-		
-		// Update values
-		button.style.height = height + "px"; 
-		button.style.marginTop = offset + "px";
-		nrOfFrames--;
-
-		// Check if animation is done, i.e. if there are no frames left
-		if (nrOfFrames == 0) {
-			clearInterval(id);
-		}
-	}
+	// Pressing down
+	$("#current_page_button").animate({
+		marginTop: "18px",
+		height: "27px"
+	}, 100)
+	
+	// Bouncing up
+	$("#current_page_button").animate({
+		marginTop: "15px",
+		height: "30px"
+	}, 100)	
 }
 
