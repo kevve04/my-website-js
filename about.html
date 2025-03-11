@@ -10,6 +10,46 @@
 		<link rel="stylesheet" href="style.css">
 		<script src="scripts/main_script.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+		<script>
+			// Used to store the sidebar element of current section the user is on
+			let currentSection;
+
+			// Get the secions
+			let sections = document.getElementsByClassName("about_section");
+
+			$(window).on("scroll", function () {
+				// Reset all styling
+				document.querySelectorAll("#about_sidebar a").forEach(e => e.classList.remove("viewing"));
+
+				// Loop through the sections
+				for (const category of sections) {
+					let catagoryDistanceToTop = category.getBoundingClientRect().y + 50; // with an offset
+
+					// If the section is in the viewing area, get the corresponding element in the sidebar
+					if (catagoryDistanceToTop <= (window.innerHeight - (window.innerHeight / 3)) && catagoryDistanceToTop > 30) {
+						currentSection = document.querySelector('a[href="#' + $(category).attr("id") + '"]');
+						break;
+					}
+				}
+				
+				// If the current section is an object, change its styling
+				if (currentSection !== null && currentSection !== undefined) {
+					currentSection.classList.add("viewing");
+				}
+			});
+
+			function changeSection(newSection) {	
+				// Remove the "viewing" of the old if it exists
+				if (currentSection !== null && currentSection !== undefined) {
+					currentSection.classList.remove("viewing");
+				}
+				
+				// Update the current section and update its styling
+				currentSection = newSection;
+				currentSection.classList.add("viewing");
+			}
+		</script>
 	</head>
 
 	<body onload="playClick()">
@@ -52,16 +92,17 @@
 
 			<nav id="about_sidebar">
 				<ul>
-					<li><a tabindex="6" href="#about">Om Vegabaren</a></li>
-					<li><a tabindex="7" href="#history">Vår Historia</a></li>
-					<li><a tabindex="8" href="#our_motto">Våra Ledord & Kvalitet</a></li>
-					<li><a tabindex="9" href="#membership">Förmåner & Medlemskort</a></li>
+					<li><a tabindex="6" href="#about" onclick="changeSection(this)">Om Vegabaren</a></li>
+					<li><a tabindex="7" href="#history" onclick="changeSection(this)">Vår Historia</a></li>
+					<li><a tabindex="8" href="#our_motto" onclick="changeSection(this)">Våra Ledord & Kvalitet</a></li>
+					<li><a tabindex="9" href="#membership" onclick="changeSection(this)">Förmåner & Medlemskort</a></li>
 				</ul>
 			</nav>
 		
-			<hr class="line" id="about">
+			
+			<div class="about_section" id="about">
+				<hr class="line" >
 
-			<div class="about_section">
 				<h2>Om Vegabaren</h2>
 				<p>
 					Hos oss på Vegabaren finns en trivsam atmosfär fylld med nostalgi och med god mat. Enligt oss själva är vi
@@ -78,9 +119,10 @@
 				</p>
 			</div>
 
-			<hr class="line" id="history">
+			
+			<div class="about_section" id="history">
+				<hr class="line">
 
-			<div class="about_section">
 				<h2>Vår Historia</h2>
 				<p>
 					Omkring år 1964 serverades Sveriges första Hamburgare, "en platt köttbulle" - Erik Engströms egna ord.
@@ -147,9 +189,10 @@
 				</p>
 			</div>
 			
-			<hr class="line" id="our_motto">
+			
+			<div class="about_section" id="our_motto">
+				<hr class="line">
 
-			<div class="about_section">
 				<h2>Våra Ledord & Kvalitet</h2>
 				<p>
 					Vi är mycket noggranna vid vårt val av <a tabindex="10" href="suppliers.html">leverantörer</a>.
@@ -166,9 +209,10 @@
 				</p>
 			</div>
 			
-			<hr class="line" id="membership">
+			
+			<div class="about_section" id="membership">
+				<hr class="line">
 
-			<div class="about_section">
 				<h2>Förmåner & Medlemskort</h2>
 				<p>
 					<b>BlI MEDLEM</b> <br> 
