@@ -10,6 +10,46 @@
 		<link rel="stylesheet" href="style.css">
 		<script src="scripts/main_script.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+		<script>
+			// Used to store the sidebar element of current section the user is on
+			let currentSection;
+
+			// Get the secions
+			let sections = document.getElementsByClassName("food_category");
+
+			$(window).on("scroll", function () {
+				// Reset all styling
+				document.querySelectorAll("#menu_sidebar a").forEach(e => e.classList.remove("viewing"));
+
+				// Loop through the sections
+				for (const category of sections) {
+					let catagoryDistanceToTop = category.getBoundingClientRect().y + 50; // with an offset
+
+					// If the section is in the viewing area, get the corresponding element in the sidebar
+					if (catagoryDistanceToTop <= (window.innerHeight - (window.innerHeight / 3)) && catagoryDistanceToTop > 30) {
+						currentSection = document.querySelector('a[href="#' + $(category).attr("id") + '"]');
+						break;
+					}
+				}
+
+				// If the current section is an object, change its styling
+				if (currentSection !== null && currentSection !== undefined) {
+					currentSection.classList.add("viewing");
+				}
+			});
+
+			function changeSection(newSection) {	
+				// Remove the "viewing" of the old if it exists
+				if (currentSection !== null && currentSection !== undefined) {
+					currentSection.classList.remove("viewing");
+				}
+				
+				// Update the current section and update its styling
+				currentSection = newSection;
+				currentSection.classList.add("viewing");
+			}
+		</script>
 	</head>
 
 	<body onload="playClick()">
@@ -51,18 +91,18 @@
 
 			<nav id="menu_sidebar">
 				<ul>
-					<li><a tabindex="6" href="#weeks_lunch">Veckans Lunch</a></li>
-					<li><a tabindex="7" href="#grill">Grillrätter</a></li>
-					<li><a tabindex="8" href="#sausage">Korvmenyer</a></li>
-					<li><a tabindex="9" href="#thinbread">Tunnbrödsrullar</a></li>
-					<li><a tabindex="10" href="#special_burgers">Special Hamburgare</a></li>
-					<li><a tabindex="11" href="#burgers">Hamburgare</a></li>
-					<li><a tabindex="12" href="#kebab">Kebab</a></li>
-					<li><a tabindex="13" href="#salad">Sallader</a></li>
-					<li><a tabindex="14" href="#other">Övriga Rätter</a></li>
-					<li><a tabindex="15" href="#sandwich_snacks">Mackor och Snacks</a></li>
-					<li><a tabindex="16" href="#vegetarian">Vegetariskt</a></li>
-					<li><a tabindex="17" href="#child">Barnmeny</a></li>
+					<li><a tabindex="6" href="#weeks_lunch" onclick="changeSection(this)">Veckans Lunch</a></li>
+					<li><a tabindex="7" href="#grill" onclick="changeSection(this)">Grillrätter</a></li>
+					<li><a tabindex="8" href="#sausage" onclick="changeSection(this)">Korvmenyer</a></li>
+					<li><a tabindex="9" href="#thinbread" onclick="changeSection(this)">Tunnbrödsrullar</a></li>
+					<li><a tabindex="10" href="#special_burgers" onclick="changeSection(this)">Special Hamburgare</a></li>
+					<li><a tabindex="11" href="#burgers" onclick="changeSection(this)">Hamburgare</a></li>
+					<li><a tabindex="12" href="#kebab" onclick="changeSection(this)">Kebab</a></li>
+					<li><a tabindex="13" href="#salad" onclick="changeSection(this)">Sallader</a></li>
+					<li><a tabindex="14" href="#other" onclick="changeSection(this)">Övriga Rätter</a></li>
+					<li><a tabindex="15" href="#sandwich_snacks" onclick="changeSection(this)">Mackor och Snacks</a></li>
+					<li><a tabindex="16" href="#vegetarian" onclick="changeSection(this)">Vegetariskt</a></li>
+					<li><a tabindex="17" href="#child" onclick="changeSection(this)">Barnmeny</a></li>
 				</ul>
 			</nav>
 
