@@ -10,6 +10,41 @@
 		<link rel="stylesheet" href="style.css">
 		<script src="scripts/main_script.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.14.1/jquery-ui.min.js"></script>
+
+		<script>
+			function confirmReset() {
+				$( "#reset_confirm" ).dialog({
+				  resizable: false,
+				  modal: true,
+				  buttons: {
+						"Återställ": function() {
+							document.getElementById("contact_form").reset();
+							closeDialog();
+						},
+						"Stäng": function() {
+							closeDialog();
+						}
+					}
+				});
+			
+				// Show the backdrop
+				$("#dialog_backdrop").css("visibility", "visible");
+			
+				// Close the dialog when the escape key is pressed
+				window.addEventListener("keydown", function (e) {
+					if (e.keyCode == 27) { 
+						closeDialog();
+					}
+				});
+			}
+
+			function closeDialog() {
+				$("#reset_confirm").dialog("close");						
+				$("#dialog_backdrop").css("visibility", "hidden");
+			}
+
+		</script>
 	</head>
 
 	<body onload="playClick()">
@@ -46,8 +81,6 @@
 			</ul>
 		</div>
 
-
-		
 		<main id="contact_main">
 			<h1>Kontakt</h1>
 
@@ -57,20 +90,26 @@
 				Är det så att du vill boka en spelning är det bättre om du kontaktar via mejl Cenkan.polat@gmail.com eller telefon 070-721 14 55.
 			</p>
 
+			<div id="dialog_backdrop" onclick="closeDialog()"></div>
+
 			<form action="mailto:someone@example.com" method="post" enctype="text/plain" id="contact_form">
 				<p class="form_text"><b>Namn:</b></p>
 				<input tabindex="6" type="text" name="namn" class="form_input"><br>
-
+				
 				<p class="form_text"><b>E-mail:</b></p>
 				<input tabindex="7" type="text" name="mail" class="form_input"><br>
-
+				
 				<p class="form_text"><b>Meddelande:</b></p>
 				<textarea tabindex="8" name="meddelande" class="form_input" id="message_input"></textarea>				
 				<br>
 				<button tabindex="9" type="submit" class="form_button"><b>Skicka</b></button> <br> <br>
-				<button tabindex="10" type="reset" class="form_button"><b>Återställ</b></button>
-			</form>
+				<button tabindex="10" type="button" class="form_button" onclick="confirmReset()"><b>Återställ</b></button>
 
+				<div id="reset_confirm" title="Återställ formulär?" style="display: none;">
+					<p>Är du säker på att du vill återställa kontaktformuläret? Det du har skrivit kommer att raderas</p>
+				</div>
+			</form>
+			
 			<p>Genom att klicka på ”Skicka” samtycker jag till att Handens Hamburgerbar AB ges möjligheten att spara Namn och E-mail.</p>
 
 		</main>
