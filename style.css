@@ -483,12 +483,17 @@ iframe {
 
 #menu_sidebar a {
     text-decoration: none;
-    color: #303636;
+    color: rgb(48, 54, 54);
 }
 
 #menu_sidebar a:hover {
 	font-weight: bold;
-    color: #0e909c;
+    color: rgb(14, 144, 156);
+}
+
+#menu_sidebar a.viewing {
+	font-weight: bold;
+    color: rgb(14, 144, 156);
 }
 
 #menu {
@@ -571,6 +576,11 @@ iframe {
 	}
 	
 	#menu_sidebar a:hover {
+		font-weight: normal;
+		color: #303636;
+	}
+	
+	#menu_sidebar a.viewing {
 		font-weight: normal;
 		color: #303636;
 	}
@@ -749,9 +759,9 @@ iframe {
 }
 
 .line {
-	width: 500px;
+	width: 510px;
 	height: 10px;
-	margin-left: -50px;
+	margin-left: -120px;
 	background-image: linear-gradient(90deg, #5ac4e1, #50eaed);
 	border: none;
 	border-radius: 0px 40px 40px 0px;
@@ -811,6 +821,10 @@ iframe {
 	font-weight: bold;
 }
 
+#about_sidebar a.viewing {
+	font-weight: bold;
+}
+
 /* ===== About Mobile ===== */
 @media only screen and (max-width: 700px) {
 	#about_main {
@@ -844,6 +858,10 @@ iframe {
 		color: whitesmoke;
 	}
 
+	#about_sidebar a.viewing {
+		font-weight: 550;
+	}
+
 	.about_section {
 		margin-left: 0px;
 		margin-bottom: 60px;
@@ -864,8 +882,8 @@ iframe {
 	}
 	
 	.line {
-		width: 90%;
-		margin-left: 5%;
+		width: 100%;
+		margin-left: 0px;
 		background-image: linear-gradient(90deg, #50eaed, #5ac4e1, #50eaed);
 		border-radius: 40px;
 	}
@@ -935,6 +953,59 @@ iframe {
 	min-height: 50px;
 	overflow-y: auto;
 }
+
+/* === Dialog Style === */
+.ui-dialog {
+    background-color: hsl(173, 18%, 80%);
+    border-radius: 10px;
+	text-align: center;
+	filter: drop-shadow(0px 0px 8px hsl(194, 79%, 17%));
+}
+.ui-dialog-titlebar {
+	background-color: hsl(208, 69%, 72%);
+	filter: drop-shadow(0px 3px 2px hsl(194, 79%, 17%));
+    color: black;
+    font-weight: bold;
+	padding: 5px;
+	text-align: center;
+	cursor: grabbing;
+	border-radius: 10px 10px 0px 0px;
+}
+.ui-button {
+	display: none;
+}
+.ui-dialog-buttonpane button {
+	width: 90px;
+	height: 40px;
+	border-radius: 5px;
+	font-size: 14px;
+	font-weight: bold;
+	background-color: hsl(208, 100%, 97%);
+    border: none;
+	color: hsl(173, 48%, 17%);
+	padding: 10px;
+	margin: 10px;
+	display: inline-block;
+}
+
+.ui-dialog-buttonpane button:hover {
+	background-color: hsl(208, 37%, 86%);
+	cursor: pointer;
+}
+
+#dialog_backdrop {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(44, 44, 44, 0.3);
+	z-index: 9;
+	visibility: hidden;
+	backdrop-filter: blur(0.5px);
+	cursor: pointer;
+}
+
 
 /* ===== Contact Mobile ===== */
 @media only screen and (max-width: 700px) {
